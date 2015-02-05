@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchKit_SimpleTable_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="viz-og-qua">
+                            <items>
+                                <tableRow identifier="itsMorphinTime" id="K9c-2Y-8bn" customClass="PowerRangerRowController" customModule="WatchKit_SimpleTable_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="68.5" alignment="left" id="od2-dn-HZg">
+                                        <items>
+                                            <imageView width="49" height="49" alignment="left" verticalAlignment="center" id="bBv-WM-oE5"/>
+                                            <label width="62" alignment="right" verticalAlignment="center" text="Label" id="4Qm-3A-2Gn"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="powerImage" destination="bBv-WM-oE5" id="Inp-ss-tXN"/>
+                                        <outlet property="powerName" destination="4Qm-3A-2Gn" id="0kp-bs-xUc"/>
+                                        <segue destination="CEz-rd-Zzi" kind="push" id="PbS-hW-hUj"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="rangerTable" destination="viz-og-qua" id="uTH-Ro-SrJ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="294" y="326"/>
+        </scene>
+        <!--Power Detail Interface Controller-->
+        <scene sceneID="N2u-m0-wFa">
+            <objects>
+                <controller id="CEz-rd-Zzi" customClass="PowerDetailInterfaceController" customModule="WatchKit_SimpleTable_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="57" alignment="center" verticalAlignment="center" id="ooo-4g-FpX">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Label" id="5Eb-bB-TXJ"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="Add to App" id="Miv-5A-wCe">
+                            <connections>
+                                <action selector="addBtnTapped" destination="CEz-rd-Zzi" id="0v0-da-GpA"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="background" destination="ooo-4g-FpX" id="ubl-W4-3y6"/>
+                        <outlet property="rangerName" destination="5Eb-bB-TXJ" id="vza-fF-6oc"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="535" y="326"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="294" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WatchKit_SimpleTable_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="535" y="643"/>
+        </scene>
+    </scenes>
+</document>
